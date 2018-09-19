@@ -21,7 +21,7 @@ type Message struct {
 
 func main() {
 	fs := http.FileServer(http.Dir("/Users/bimapw/Documents/go/src/github.com/bimapw/hunie/public"))
-	http.Handle("/", fs)
+	http.Handle("/chat", fs)
 	http.HandleFunc("/ws", handleConnections)
 
 	go handleMessages()
